@@ -33,6 +33,7 @@ const lib_paths =[
     `/lib/iro.min.js`,
     `/lib/isMobile.min.js`,
     `/lib/jszip-3.10.1.min.js`,
+    `/lib/pyodide.js`,
 ]
 
 // Ordered list of CSS stylesheets

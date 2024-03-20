@@ -1230,6 +1230,23 @@ function UIItem(options){
                 menu_items.push('-')
             }
             // -------------------------------------------
+            // Execute with Python
+            // -------------------------------------------
+            if(!is_trashed && window.feature_flags.create_shortcut){
+                menu_items.push({
+                    html: "Execute with Python",
+                    onClick: async function(){
+                        puter.fs.read(options.path).then(async function (blob) {
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                python.runPython(event.target.result);
+                            };
+                            reader.readAsText(blob);
+                        });
+                    }
+                });
+            }
+            // -------------------------------------------
             // Create Shortcut
             // -------------------------------------------
             if(!is_trashed && window.feature_flags.create_shortcut){

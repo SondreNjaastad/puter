@@ -3660,3 +3660,7 @@ window.delete_desktop_item_positions = ()=>{
     desktop_item_positions = {}
     puter.kv.del('desktop_item_positions');
 }
+
+window.python = await loadPyodide({
+    indexURL : "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/"
+});
